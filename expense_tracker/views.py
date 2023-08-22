@@ -18,7 +18,7 @@ COMMANDS = (
 
 
 def send_message_with_commands(message, text):
-    bot.reply_to(message, f"{text}\n{COMMANDS}")
+    bot.reply_to(message, f"{text}\n\n{COMMANDS}")
 
 
 @csrf_exempt

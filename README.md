@@ -2,7 +2,9 @@
 
 This is a Django project that implements a task management system. The project aims to provide a 
 user-friendly interface for managing tasks and workers within an organization. 
-It allows users to efficiently track and manage tasks, assign them to workers, and monitor their progress. By using this task management system, organizations can improve their productivity and ensure effective task allocation and completion.
+It allows users to efficiently track and manage tasks, assign them to workers, and monitor their progress. 
+By using this task management system, organizations can improve their productivity and ensure 
+effective task allocation and completion.
 
 ## Installing / Getting started
 
@@ -16,7 +18,8 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 Execute the command `ngrok http 8000` to configure the port from 
-the Telegram bot to your local machine
+the Telegram bot to your local machine and copy the url address from the terminal 
+to WEB_HOOK_URL in your .env file
 Create a `.env` file by copying the `.env.sample` file and 
 populate it with the required values
 python manage.py runserver # starts Django Server
