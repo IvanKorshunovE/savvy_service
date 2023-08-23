@@ -11,5 +11,11 @@ class Expense(models.Model):
         auto_now_add=True
     )
 
+    class Meta:
+        ordering = ["-timestamp"]
+
     def __str__(self):
-        return f"Expense {self.amount} by user {self.user_id}"
+        return (
+            f"Expense {self.amount} "
+            f"by user {self.user_id}"
+        )

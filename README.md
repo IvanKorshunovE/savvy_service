@@ -11,18 +11,19 @@ effective task allocation and completion.
 A quick introduction of the minimal setup you need to get this telegram bot up &
 running.
 
+
+## Steps
 ```shell
 git clone https://github.com/IvanKorshunovE/savvy_service
 cd savvy_service
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-Execute the command `ngrok http 8000` to configure the port from 
-the Telegram bot to your local machine and copy the url address from the terminal 
-to WEB_HOOK_URL in your .env file
+ngrok http 8000 to configure the port from the Telegram bot to your local machine and 
+copy the url address from the terminal to WEB_HOOK_URL in your .env file
 Create a `.env` file by copying the `.env.sample` file and 
 populate it with the required values
-python manage.py runserver # starts Django Server
+python manage.py runserver
 ```
 
 After executing these commands, the Django server should be up and running, 
@@ -43,9 +44,9 @@ instructions on how to enter your expenses.
 If you need assistance with using the bot, just type `/help`. 
 It will provide you with guidance on entering expenses.
 
-## Get Expenses Command
+## Expenses Command
 
-To get the total amount of your expenses, use the `/get_expenses` command. 
+To get the total amount of your expenses, use the `/expenses` command. 
 The bot will display the total amount in Ukrainian hryvnias.
 
 ## Adding Expenses

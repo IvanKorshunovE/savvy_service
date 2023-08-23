@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+from urllib.parse import urlparse
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -10,7 +12,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["7d28-152-89-20-212.ngrok.io"]
+WEBHOOK_URL = os.environ.get("WEB_HOOK_URL")
+
+DOMAIN_NAME = urlparse(WEBHOOK_URL).netloc
+
+ALLOWED_HOSTS = [DOMAIN_NAME]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -87,7 +93,4 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Telegram bot settings
 TOKEN = os.environ.get("TELEGRAM_TOKEN")
-WEBHOOK_URL = os.environ.get("WEB_HOOK_URL")
-PROXY_URL = "t.me/savy_service_bot"

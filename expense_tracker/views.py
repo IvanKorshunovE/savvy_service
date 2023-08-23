@@ -13,7 +13,7 @@ bot = telebot.TeleBot(bot_token)
 COMMANDS = (
     "/start - почати використання бота\n"
     "/help - отримати допомогу з використанням\n"
-    "/get_expenses - отримати загальну суму витрат"
+    "/expenses - отримати загальну суму витрат"
 )
 
 
@@ -48,13 +48,16 @@ def handle_help(message):
     )
 
 
-@bot.message_handler(commands=["get_expenses"])
-def handle_get_expenses(message):
-    total_expense = Expense.objects.aggregate(
+@bot.message_handler(commands=["expenses"])
+def handle_expenses(message):
+    user_id = message.from_user.id
+    total_expense = Expense.objects.filter(
+        user_id=user_id
+    ).aggregate(
         total_amount=Sum("amount")
     ).get("total_amount")
 
-    if total_expense is not None:
+    if total_expense:
         total_expense_str = str(round(total_expense, 2))
         send_message_with_commands(
             message,
