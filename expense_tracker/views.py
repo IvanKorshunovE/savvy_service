@@ -61,7 +61,7 @@ def handle_expenses(message):
         total_expense_str = str(round(total_expense, 2))
         send_message_with_commands(
             message,
-            f"Загальні витрати становлять {total_expense_str} грн."
+            f"Ваші загальні витрати становлять {total_expense_str} грн."
         )
     else:
         send_message_with_commands(message, "Щось пішло не так.")

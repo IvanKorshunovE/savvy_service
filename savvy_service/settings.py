@@ -14,9 +14,9 @@ DEBUG = True
 
 WEBHOOK_URL = os.environ.get("WEB_HOOK_URL")
 
-DOMAIN_NAME = urlparse(WEBHOOK_URL).netloc
+WEBHOOK_DOMAIN_NAME = urlparse(WEBHOOK_URL).netloc
 
-ALLOWED_HOSTS = [DOMAIN_NAME]
+ALLOWED_HOSTS = [WEBHOOK_DOMAIN_NAME]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
